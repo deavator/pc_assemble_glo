@@ -1,5 +1,6 @@
 function modal () {
     const   modalForm = document.querySelector('.modal'),
+            modalInner = document.querySelector('.modal__inner'),
             modalBtn = document.querySelector('.modal__button'),
             closeBtn = document.querySelector('.close-bnt'),
             courseBtn = document.querySelector('.course-button__wrap');
@@ -17,6 +18,24 @@ function modal () {
     }
 
     // === ОБРАБОТКА СОБЫТИЙ =================
+
+    // Создание "Х" для закрытия модального окна
+    const xBtn = document.createElement('div');
+    xBtn.innerText = 'X';
+
+    modalInner.append(xBtn);
+
+    xBtn.style.cssText = `
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        padding: 10px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    `; 
+
+    // === ОБРАБОТКА СОБЫТИЙ =================
     openBtns.forEach(btn => {
         btn.addEventListener('click', () => {
         openModal();
@@ -28,7 +47,7 @@ function modal () {
         if (!formContent) {closeModal();}
     });
 
-    closeBtn.addEventListener('click', () => {
+    xBtn.addEventListener('click', () => {
         closeModal();
     });
     
