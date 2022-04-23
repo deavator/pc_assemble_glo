@@ -567,10 +567,21 @@ progress::-moz-progress-value {
 }
 
 .modal__inner {
+    position: relative;
     width: 66.3rem;
     padding: 9rem 9.5rem;
     background: #2C2C2C;
     text-align: center;
+}
+
+.close-bnt {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    padding: 10px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
 }
 
 .modal__header {
@@ -580,6 +591,7 @@ progress::-moz-progress-value {
     color: var(--text-white-color);
     margin-bottom: 1rem;
 }
+
 
 .modal__subheader {
     font-weight: 400;
@@ -630,6 +642,7 @@ progress::-moz-progress-value {
     overflow: hidden !important;
     height: 100% !important;
 }
+
 
 /*сетка*/
 @media (max-width: 108em) {

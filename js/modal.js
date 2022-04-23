@@ -1,6 +1,11 @@
 function modal () {
     const   modalForm = document.querySelector('.modal'),
-            modalBtn = document.querySelector('.modal__button');
+            modalBtn = document.querySelector('.modal__button'),
+            closeBtn = document.querySelector('.close-bnt'),
+            courseBtn = document.querySelector('.course-button__wrap');
+
+    const openBtns = [...arguments, modalBtn, courseBtn];
+    
 
     // === ФУНКЦИИ ========================== 
     function openModal () {
@@ -12,8 +17,10 @@ function modal () {
     }
 
     // === ОБРАБОТКА СОБЫТИЙ =================
-    modalBtn.addEventListener('click', () => {
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
         openModal();
+        });
     });
 
     modalForm.addEventListener('click', (e) => {
@@ -21,6 +28,9 @@ function modal () {
         if (!formContent) {closeModal();}
     });
 
+    closeBtn.addEventListener('click', () => {
+        closeModal();
+    });
     
 }
 modal();
