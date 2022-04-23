@@ -1,4 +1,5 @@
-const contents = document.querySelectorAll('.program-line__content');
+function accordion() {
+    const contents = document.querySelectorAll('.program-line__content');
 
 function classActiveRemove() {
     contents.forEach(elem => {
@@ -24,5 +25,7 @@ contents.forEach(elem => {
         }
     });
 });
+}
 
+accordion();
 
